@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plan Review Portal</title>
+    <link rel="icon" href="/logo.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <img src="/logo.svg" alt="" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-title">Plan Review Portal</span>
+            <span class="brand-sub">Construction plan review · Proof of concept</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="locale-switch" role="group" aria-label="Language">
+            <button data-locale="en" class="is-active">EN</button>
+            <button data-locale="de">DE</button>
+          </div>
+          <div class="user">
+            <span class="avatar">ST</span>
+            <span class="user-name">S. Taylor<small>Reviewer · Building services</small></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <section class="panel">
+            <h2>Documents</h2>
+            <ul id="doc-list" class="doc-list"></ul>
+          </section>
+
+          <section class="panel">
+            <h2>Review workflow</h2>
+            <p class="panel-hint">Workflow state stays in your application. This panel only shows how it plugs into the viewer.</p>
+            <ol id="workflow" class="workflow"></ol>
+            <div class="actions">
+              <button id="btn-approve" class="btn btn-primary">Approve plan</button>
+              <button id="btn-reject" class="btn">Request changes</button>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Markup storage</h2>
+            <p class="panel-hint">Two options, both available from the same API.</p>
+            <div class="actions actions-col">
+              <button id="btn-xfdf" class="btn">Export markup as XFDF (separate file)</button>
+              <button id="btn-pdf" class="btn">Export PDF with embedded markup</button>
+              <button id="btn-flatten" class="btn">Export flattened PDF (archive copy)</button>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Activity</h2>
+            <ul id="activity" class="activity"></ul>
+          </section>
+        </aside>
+
+        <section class="viewer-area">
+          <div class="viewer-bar">
+            <div class="doc-meta">
+              <strong id="doc-title">—</strong>
+              <span id="doc-meta" class="muted"></span>
+            </div>
+            <div class="viewer-actions">
+              <button id="btn-redline" class="btn btn-ghost">Redlining mode</button>
+              <button id="btn-measure" class="btn btn-ghost">Measure distance</button>
+              <button id="btn-scale" class="btn btn-ghost">Scale &amp; calibration</button>
+              <button id="btn-sign" class="btn btn-primary">Sign as reviewer</button>
+            </div>
+          </div>
+          <div id="viewer" class="viewer"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

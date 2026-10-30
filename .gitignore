@@ -1,0 +1,16 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Logs, caches, OS and tool files
+*.log
+logs/
+.cache/
+.vite/
+.DS_Store
+*.zip
